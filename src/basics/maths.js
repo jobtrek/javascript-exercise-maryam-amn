@@ -32,7 +32,6 @@ export function roundNumberToOneDecimals(n) {
  */
 export function computeAverage(grades) {
   // Write your code here
-
   if (
     !Array.isArray(grades) ||
     !grades.every((item) => typeof item === 'number' && !isNaN(item))
