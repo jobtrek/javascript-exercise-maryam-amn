@@ -9,23 +9,21 @@
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
   // Write your code here
 
-  if (typeof newWord !== "string"||typeof needle !== "string"){
-    throw new Error("Not a string " )}
+  if (typeof newWord !== 'string' || typeof needle !== 'string') {
+    throw new Error('Not a string ')
+  }
 
-    return haystack.replaceAll(new RegExp(needle, 'gi'), (match) => {
+  return haystack.replaceAll(new RegExp(needle, 'gi'), (match) => {
+    let resultat = ''
 
-      let resultat = '';
-    
-      for (let i = 0; i < match.length; i++) {
-  
-        const word = newWord[i] || ''
-        if (match[i] === match[i].toUpperCase()) {
-          resultat += word.toUpperCase()
-        } else {
-          resultat += word.toLowerCase()
-        }
+    for (let i = 0; i < match.length; i++) {
+      const word = newWord[i] || ''
+      if (match[i] === match[i].toUpperCase()) {
+        resultat += word.toUpperCase()
+      } else {
+        resultat += word.toLowerCase()
       }
-      return resultat;
-    })
-
+    }
+    return resultat
+  })
 }
