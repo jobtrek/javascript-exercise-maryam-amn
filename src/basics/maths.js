@@ -36,7 +36,7 @@ export function computeAverage(grades) {
     !Array.isArray(grades) ||
     !grades.every((item) => typeof item === 'number' && !isNaN(item))
   ) {
-    throw new Error('...')
+    throw new Error('Not a number')
   }
   let sum = 0
   for (let i = 0; i < grades.length; i++) {
@@ -56,7 +56,7 @@ export function roundedAverage(grades) {
     !Array.isArray(grades) ||
     !grades.every((item) => typeof item === 'number' && !isNaN(item))
   ) {
-    throw new Error('...')
+    throw new Error('Not a number')
   }
   let sum = 0
   for (let i = 0; i < grades.length; i++) {
