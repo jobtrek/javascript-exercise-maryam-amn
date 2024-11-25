@@ -5,12 +5,16 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
+import { json } from "stream/consumers";
+
 /**
  * @return {Object} you should return a new object containing two properties, first_name and last_name.
  * The values of the properties should be "Toto", "Tutu"
  */
 export function crateUserObject() {
   // Write your code here
+  const user = { first_name: 'Toto', last_name: 'Tutu' };
+  return user
 }
 
 /**
@@ -20,6 +24,7 @@ export function crateUserObject() {
  */
 export function accessPropertiesInObjects(object) {
   // Write your code here
+  return (`${object.first_name} ${object.last_name}`);
 }
 
 /**
@@ -31,6 +36,18 @@ export function accessPropertiesInObjects(object) {
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
   // Write your code here
+
+  let propreties = Object.getOwnPropertyNames(object)
+
+  const keys = []
+  const values = []
+  for (let proprety of propreties) {
+    keys.push(proprety.toUpperCase());
+    values.push(object[proprety].toLowerCase());
+  }
+
+  return { keys, values }
+
 }
 
 /**
@@ -40,6 +57,28 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  */
 export function retrieveMaximumMinimumUserAges(users) {
   // Write your code here
+
+  if (!users || users.length === 0) {
+    return { younger: '', older: '' }
+  }
+
+  let youngerUser = users[0]
+  let olderUser = users[0]
+
+  for (let i = 1; i < users.length; i++) {
+    const user = users[i];
+    if (user.age < youngerUser.age) {
+      youngerUser = user
+    }
+
+    if (user.age >= olderUser.age) {
+      olderUser = user
+    }
+  }
+  return { younger: youngerUser.name, older: olderUser.name }
+
+
+
 }
 
 /**
@@ -50,6 +89,7 @@ export function retrieveMaximumMinimumUserAges(users) {
  */
 export function parseJavaScriptObjectNotation(string) {
   // Write your code here
+  return JSON.parse(string)
 }
 
 /**
@@ -58,4 +98,5 @@ export function parseJavaScriptObjectNotation(string) {
  */
 export function stringifyJavaScriptObjectNotation(object) {
   // Write your code here
+  return JSON.stringify(object)
 }
