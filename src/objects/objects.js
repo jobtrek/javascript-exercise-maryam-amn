@@ -41,6 +41,7 @@ export function iteratesThroughObjectValuesAndProperties(object) {
 
   const keys = []
   const values = []
+  
   for (let proprety of propreties) {
     keys.push(proprety.toUpperCase());
     values.push(object[proprety].toLowerCase());
@@ -83,7 +84,7 @@ export function retrieveMaximumMinimumUserAges(users) {
  * In javascript, objects can be represented as string, this is JSON
  * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
  * @param {string} string
- * @return {Object} An object retried by parsing thge string
+ * @return {Object} An object retried by parsing the string
  */
 export function parseJavaScriptObjectNotation(string) {
   // Write your code here
