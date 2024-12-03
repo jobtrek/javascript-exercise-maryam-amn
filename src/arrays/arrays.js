@@ -4,6 +4,11 @@
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   // Write your code here
+  const word = array.join(' ');
+  const words = word.split(' ');
+  var filtered = words.filter(word => word.length > 0);
+  return filtered
+
 }
 
 /**
@@ -14,6 +19,8 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  */
 export function concatenateArrays(array1, array2) {
   // Write your code here
+  const array3 = array1.concat(array2);
+  return array3
 }
 
 /**
@@ -22,10 +29,11 @@ export function concatenateArrays(array1, array2) {
  * @param {...*} newElements
  * @return {array<*>} A new array, sorted, **the original array should not be modified**
  */
-export function replaceElementsInArrayAtAGivenPlace(
-  array,
-  index,
-  ...newElements
-) {
+export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
   // Write your code here
+
+  const arr = [...array];
+  arr.splice(index, newElements.length, ...newElements);
+  return arr
+
 }
