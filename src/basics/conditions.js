@@ -14,6 +14,15 @@
  */
 export function isBiggerThan2(n) {
   // Write your code here
+  if (n > 2) {
+    return true
+  } else if (n <= 2) {
+    return false
+  } else {
+    throw new IllegalArgumentException(
+      'Unsupported object type: ' + obj.getClass().getName(),
+    )
+  }
 }
 
 /**
@@ -23,4 +32,14 @@ export function isBiggerThan2(n) {
  */
 export function isMult(n, m) {
   // Write your code here
+  var remainder = n % m
+  if (remainder == 0) {
+    return true
+  } else if (remainder >= 1) {
+    return false
+  } else {
+    throw new IllegalArgumentException(
+      'Unsupported object type: ' + obj.getClass().getName(),
+    )
+  }
 }

@@ -7,4 +7,13 @@
  */
 export function fetchDataOnClick() {
   // Write your code here
+const click = document.querySelector("#click-to-fetch")
+    click.addEventListener('click', (event) => {
+
+const file  = "https://api.github.com/octocat"
+           fetch (file)
+            .then(x => x.text())
+            .then(y => document.querySelector("#display-here").innerHTML = y);
+    })
+
 }
